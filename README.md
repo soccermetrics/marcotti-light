@@ -20,28 +20,28 @@ While not required, [virtualenv](https://pypi.python.org/pypi/virtualenv) is str
 
 Installation instructions:
 
-    1. Grab latest repo, setup the virtual environment, and install the dependent packages into it:
+1. Grab latest repo, setup the virtual environment, and install the dependent packages into it:
+
+        $ git clone git://github.com/soccermetrics/marcotti-light.git
+        $ cd marcotti-light
+        $ mkvirtualenv light
+        (light) $ pip install -r requirements.txt
     
-            $ git clone git://github.com/soccermetrics/marcotti-light.git
-            $ cd marcotti-light
-            $ mkvirtualenv light
-            (light) $ pip install -r requirements.txt
+2. Copy `light\config\local.skel` to `light\config\local.py` and populate it.  Alternative configuration
+   settings can be created by subclassing `LocalConfig` and overwriting the attributes.
+    
+        ```python
+        class LocalConfig(Config):
+            # At a minimum, these variables must be defined.
+            DIALECT = ''
+            DBNAME = ''
         
-    2. Copy `light\config\local.skel` to `light\config\local.py` and populate it.  Alternative configuration
-       settings can be created by subclassing `LocalConfig` and overwriting the attributes.
-        
-            ```python
-            class LocalConfig(Config):
-                # At a minimum, these variables must be defined.
-                DIALECT = ''
-                DBNAME = ''
-            
-                # For all other non-SQLite databases, these variables must be set.
-                DBUSER = ''
-                DBPASSWD = ''
-                HOSTNAME = ''
-                PORT = 5432
-            ```
+            # For all other non-SQLite databases, these variables must be set.
+            DBUSER = ''
+            DBPASSWD = ''
+            HOSTNAME = ''
+            PORT = 5432
+        ```
     
 Common Tables
 -------------
