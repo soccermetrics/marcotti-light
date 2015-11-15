@@ -1,8 +1,7 @@
 Marcotti-Light
 ==============
 
-This is the implementation of the Light version of the Marcotti (formerly Football Match Result Database) models.  
-The models are implemented as backend-independent SQLAlchemy objects, and club and national team databases are 
+This is the implementation of the Light version of the Marcotti (formerly Football Match Result Database) models. The models are implemented as backend-independent SQLAlchemy objects, and club and national team databases are 
 built from these objects.
 
 Marcotti-Light captures full-time scorelines (and penalty shootout results if applicable) for teams participating 
@@ -30,18 +29,18 @@ Installation instructions:
 2. Copy `light\config\local.skel` to `light\config\local.py` and populate it.  Alternative configuration
    settings can be created by subclassing `LocalConfig` and overwriting the attributes.
     
-        ```python
-        class LocalConfig(Config):
-            # At a minimum, these variables must be defined.
-            DIALECT = ''
-            DBNAME = ''
+   ```python
+   class LocalConfig(Config):
+        # At a minimum, these variables must be defined.
+        DIALECT = ''
+        DBNAME = ''
         
-            # For all other non-SQLite databases, these variables must be set.
-            DBUSER = ''
-            DBPASSWD = ''
-            HOSTNAME = ''
-            PORT = 5432
-        ```
+        # For all other non-SQLite databases, these variables must be set.
+        DBUSER = ''
+        DBPASSWD = ''
+        HOSTNAME = ''
+        PORT = 5432
+   ```
     
 Common Tables
 -------------
