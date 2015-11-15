@@ -1,0 +1,22 @@
+"""
+This is a skeleton of a local configuration file that
+sets database variables.
+
+This file must be copied to local.py so that the configuration
+class can find the settings.
+"""
+from light.config import Config
+
+
+class LocalConfig(Config):
+    # At a minimum, these variables must be defined.
+    DIALECT = ''
+    DBNAME = ''
+
+    # For all other non-SQLite databases, these variables must be set.
+    DBUSER = ''
+    DBPASSWD = ''
+    HOSTNAME = ''
+    PORT = 5432
+
+config = LocalConfig()
